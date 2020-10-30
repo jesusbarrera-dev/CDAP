@@ -1,5 +1,6 @@
 module.exports = app => {
-  app.get('/', (req, res) => {
-    res.send("Index page");
+  app.get('/contacto', (req, res) => {
+    res.render("contact");
   });
+
 }
