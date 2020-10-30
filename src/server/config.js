@@ -12,7 +12,7 @@ module.exports = app => {
   app.set('view engine', 'ejs');
 
   //static files
-  app.use('/public', express.static(path.join(__dirname, '/public')));
+  app.use('/public', express.static(path.join(__dirname, '../public')));
   console.log("config: " + __dirname);
 
   //routes
