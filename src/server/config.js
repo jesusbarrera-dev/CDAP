@@ -1,6 +1,6 @@
 const path = require('path');
 const ejs = require('ejs');
-const express = require('express')
+const express = require('express');
 
 const routes = require('../routes/index.js');
 
@@ -8,7 +8,7 @@ module.exports = app => {
 
   //settings
   app.set('port', process.env.PORT || 3000);
-  app.set('views', path.join(__dirname, 'views/layouts'));
+  app.set('views', path.join(__dirname, '../views'));
   app.set('view engine', 'ejs');
 
   //static files
