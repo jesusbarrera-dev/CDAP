@@ -13,7 +13,6 @@ module.exports = app => {
 
   //static files
   app.use('/public', express.static(path.join(__dirname, '../public')));
-  console.log("config: " + __dirname);
 
   //routes
   routes(app);
