@@ -4,7 +4,11 @@ html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color:white;
+  background-color: #011638;
+  opacity: 0.9;
 }
+
 
 /* CONTACT PAGE STYLES */
 
@@ -38,4 +42,18 @@ html{
 
 .icon{
   width: 3rem;
+}
+
+/* ABOUT US STYLES */
+
+.bg-blue{
+  color:white;
+  background-color:#011638;
+}
+
+.elegant-border{
+  border-style:double;
+}
+.times-new-roman{
+  font-family:"Times New Roman", Times, serif;
 }
