@@ -97,11 +97,29 @@ header h1{
 .text-boxes{
   background:white;
   color:gray;
-  padding:20px;
+  padding:0px;
   display:flex;
   flex-direction: row;
   font-size: 18px;
   text-align: center;
+  text-transform: none;
+}
+a{
+  background-color: orangered; /* Green */
+  border: 1px white;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: gray 0 0 10px;
+  border-radius: 10px;
+}
+a:hover{
+  background-color: darksalmon;
+  border: 1px red;
 }
 
 /*FOOTER*/

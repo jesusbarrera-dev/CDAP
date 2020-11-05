@@ -11,6 +11,12 @@ module.exports = app => {
   app.get('/SobreNosotros', (req, res) => {
     res.render("aboutUs");
   });
+  app.get('/donativo', (req, res) => {
+    res.render("donation");
+  });
+  app.get('/necesidades', (req, res) => {
+    res.render("needs");
+  });
 
   app.get('/', (req, res) => {
     res.render("home");
