@@ -13,7 +13,7 @@ module.exports = app => {
   });
 
   app.get('/', (req, res) => {
-    res.render("indexu");
+    res.render("home");
   });
 
   app.use((req, res, next) => {

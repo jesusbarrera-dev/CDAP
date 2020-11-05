@@ -4,8 +4,6 @@ html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color:white;
-  background-color: #011638;
   opacity: 0.9;
 }
 
@@ -56,4 +54,62 @@ html{
 }
 .times-new-roman{
   font-family:"Times New Roman", Times, serif;
+}
+
+/*HEADER*/
+
+header{
+  background-color:#011638;
+  background-image: url("../images/atardecer.jpg");
+  background-size: 100%;
+  background-position: center;
+  height:400px;
+  padding: 20px;
+  text-align:center;
+}
+header h1{
+  color:white;
+  margin-top:60px;
+}
+/* HOMEPAGE*/
+
+.features{
+  background:white;
+  color:black;
+  padding:20px;
+  display:flex;
+  flex-direction: row;
+  font-size: 24px;
+  
+}
+.features figure{
+  margin:auto;
+  text-align: center;
+  text-transform: uppercase;
+  width:200px;
+}
+.features figure img{
+  border: 1px solid white;
+  border-radius: 50%;
+  width:200px;
+  box-shadow:gray 0 0 10px;
+}
+.text-boxes{
+  background:white;
+  color:gray;
+  padding:20px;
+  display:flex;
+  flex-direction: row;
+  font-size: 18px;
+  text-align: center;
+}
+
+/*FOOTER*/
+
+footer{
+  background:#011638;
+  color:gray;
+  font-size:12px;
+  padding: 20px 20px;
+  text-align: center;
 }
