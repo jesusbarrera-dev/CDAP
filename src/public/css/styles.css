@@ -104,7 +104,7 @@ header h1{
   text-align: center;
   text-transform: none;
 }
-a{
+button{
   background-color: orangered; /* Green */
   border: 1px white;
   color: white;
@@ -117,7 +117,7 @@ a{
   box-shadow: gray 0 0 10px;
   border-radius: 10px;
 }
-a:hover{
+button:hover{
   background-color: darksalmon;
   border: 1px red;
 }
