@@ -3,6 +3,9 @@ const router = express.Router();
 
 module.exports = app => {
 
+  app.get('/login', (req, res) => {
+    res.render("login");
+  });
 
   app.get('/contacto', (req, res) => {
     res.render("contact");
