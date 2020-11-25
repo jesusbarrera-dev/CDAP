@@ -6,49 +6,73 @@
     <header>
         <h1>Casa de Descanso Del Anciano de Poncitlan</h1>
     </header>
+   
     <section class="features">
-        <figure>
-            <img src="../public/images/unidos.jpg" alt="unidos">
-            <figcaption>¡Conócenos!</figcaption>
-            <div class="text-boxes">
-                <p>
-                    Podrás conocer a algunos de los ancianos que se hospedan en nuestra casa, para que los conozcas
-                    mejor y te animes a apoyarnos. ¿Qué esperas? ¡No te pierdas esta oportunidad única!
-                </p>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <figure>
+                        <img src="../public/images/SobreNosotros.jpg" alt="Historias">
+                        <figcaption>¡Sobre Nosotros!</figcaption>
+                    </figure>
+                    <div class="text-boxes">
+                        <p>
+                            Conoce las historias de las personas que se hospedan en la casa de ancianos. ¡Énterate de como llegaron aquí!
+                        </p>
+                        <button>
+                            <a href="/SobreNosotros">Sobre Nosotros</a>
+                        </button>
+                    </div>
+                </div>
+              <div class="col-sm">
+                <figure>
+                    <img src="../public/images/unidos.jpg" alt="unidos">
+                    <figcaption>¡Conócenos!</figcaption>
+                </figure>
+                <div class="text-boxes">
+                    <p>
+                        Podrás conocer a algunos de los ancianos que se hospedan en nuestra casa, para que los conozcas
+                        mejor y te animes a apoyarnos. ¿Qué esperas? ¡No te pierdas esta oportunidad única!
+                    </p>
+                    <button>
+                        <a href="/contacto">¡Conócenos!</a>
+                    </button>
+                </div>
+                
+              </div>
+              <div class="col-sm">
+                <figure>
+                    <img src="../public/images/apoyo.jpg" alt="apoyo">
+                    <figcaption>¿Qué necesitamos?</figcaption>
+                </figure>
+                <div class="text-boxes">
+                    <p>
+                        A continuación podrás ver una lista de necesidades de nuestros hospedados. Así sabrás que nos hace
+                        falta en la casa y que nos sería de mucha utilidad.
+                    </p>
+                    <button>
+                        <a href="/necesidades">¿Qué necesitamos?</a>
+                    </button>
+                </div>
+              </div>
+              <div class="col-sm">
+                <figure>
+                    <img src="../public/images/donativo.png" alt="despensa">
+                    <figcaption>¡Apóyanos!</figcaption>
+                </figure>
+                <div class="text-boxes">
+                    <p>
+                        Aquí podrás apoyarnos directamente. ¿Qué nos estas donando? ¿A quién se lo estás donando? ¡Todo eso
+                        y más!
+                    </p>
+                    <button>
+                        <a href="/donativo">¡Apóyanos!</a>
+                    </button>
+                </div>
+                
+              </div>
             </div>
-            <button>
-                <a href="/contacto">¡Conócenos!</a>
-            </button>
-
-        </figure>
-        <figure>
-            <img src="../public/images/apoyo.jpg" alt="apoyo">
-            <figcaption>¿Qué necesitamos?</figcaption>
-            <div class="text-boxes">
-                <p>
-                    A continuación podrás ver una lista de necesidades de nuestros hospedados. Así sabrás que nos hace
-                    falta en la casa y que nos sería de mucha utilidad.
-                </p>
-            </div>
-            <button>
-                <a href="/necesidades">¿Qué necesitamos?</a>
-            </button>
-        </figure>
-
-        <figure>
-            <img src="../public/images/donativo.png" alt="despensa">
-            <figcaption>¡Apóyanos!</figcaption>
-            <div class="text-boxes">
-                <p>
-                    Aquí podrás apoyarnos directamente. ¿Qué nos estas donando? ¿A quién se lo estás donando? ¡Todo eso
-                    y más!
-                </p>
-            </div>
-            <button>
-                <a href="/donativo">¡Apóyanos!</a>
-            </button>
-        </figure>
+          </div>       
     </section>
     <%- include("template/footer" ) %>
 </body>

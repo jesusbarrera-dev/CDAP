@@ -97,17 +97,15 @@ header h1{
 .text-boxes{
   background:white;
   color:gray;
-  padding:0px;
-  display:flex;
-  flex-direction: row;
   font-size: 18px;
   text-align: center;
   text-transform: none;
 }
-button{
+
+
+button {
   background-color: orangered; /* Green */
   border: 1px white;
-  color: white;
   padding: 20px;
   text-align: center;
   text-decoration: none;
@@ -120,7 +118,16 @@ button{
 button:hover{
   background-color: darksalmon;
   border: 1px red;
+  color: gray;
 }
+button a{
+  color: white;
+}
+button:hover a{
+  text-decoration:none; 
+  color:gray;
+}
+
 
 /*FOOTER*/
 
