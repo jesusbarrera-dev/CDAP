@@ -1,39 +1,6 @@
 <%- include("template/header" , {tituloWeb: 'Contacto | Casa del Anciano Poncitlán'} ) %>
 
 <div class="container mt-4">
-
-  <div class="row justify-content-center my-4">
-    <div class="col-4">
-      <h2>¡Contacta con nosotros!</h2>
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <form>
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <input type="text" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-          <label for="message">Mensaje</label><br>
-          <textarea name="message" id="message" cols="46" rows="12"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <hr class="shadow-lg bg-black rounded">
-</div>
-
-<div class="container mt-4">
   <div class="row mt-5">
     <div class="col">
       <h2>¿Dónde estamos?</h2>
@@ -66,7 +33,38 @@
 
   </div>
 </div>
+<div class="container-fluid">
+  <hr class="shadow-lg bg-black rounded">
+</div>
 
+<div class="container mt-4">
+
+  <div class="row justify-content-center my-4">
+    <div class="col-4">
+      <h2>¡Contacta con nosotros!</h2>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <form>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label><br>
+          <textarea name="message" id="message" cols="46" rows="12"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</div>
 <%- include("template/footer" ) %>
 </body>
 

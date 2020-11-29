@@ -146,7 +146,14 @@ button:hover a{
   text-decoration:none; 
   color:gray;
 }
-
+/*ABOUT US*/
+.elder-image{
+  width : 150px;
+  border: 1px solid lightblue;
+  border-radius: 5%;
+  width:200px;
+  box-shadow:gray 0 0 10px;
+}
 
 /*FOOTER*/
 
