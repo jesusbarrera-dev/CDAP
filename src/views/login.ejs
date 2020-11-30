@@ -1,16 +1,17 @@
 <%- include("template/header" , {tituloWeb: 'Login | Casa del Anciano Poncitlán'} ) %>
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="text-center p-5">
+  <form action="/login" method="POST" class="form-signin login-form">
+    <img class="mb-4" src="../public/images/login.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Inciar sesión</h1>
+      <label for="inputEmail" class="float-left">Correo electrónico</label>
+      <input type="email" id="inputEmail" name="correo" class="form-control" placeholder="ejemplo@correo.com" required autofocus>
+      <label for="inputPassword" class="float-left mt-4">Contraseña</label>
+      <input type="password" id="inputPassword" name="contra" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Ingresar</button>
+    <p class="mt-5 mb-3 text-muted">&copy;2020</p>
+  </form>
+</div>
 
 <%- include("template/footer" ) %>
 </body>
