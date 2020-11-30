@@ -1,6 +1,9 @@
 const path = require('path');
 const ejs = require('ejs');
 const express = require('express');
+const session = require('express-session');
+const passport = require("passport");
+
 
 const routes = require('../routes/index.js');
 
@@ -14,6 +17,17 @@ module.exports = app => {
   //static files
   app.use('/public', express.static(path.join(__dirname, '../public')));
 
+  //sessions
+  app.use(session({
+    secret:"123",
+    resave: false,
+    saveUninitialized: false
+}));
+
+  // app.use(passport.initialize());
+  // app.use(passport.session());
+
+  
   //routes
   routes(app);
 
