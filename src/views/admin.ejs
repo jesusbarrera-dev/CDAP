@@ -1,0 +1,109 @@
+<%- include("template/header" , {tituloWeb: 'Necesidades | Casa de Ancianos Poncitlan' }) %>  
+
+<div class="container-fluid">
+
+  <div class="row justify-content-center my-4">
+    <h2>Registrar nueva necesidad</h2>
+  </div>
+
+  <!-- REGISTRAR NECESIDAD -->
+
+  <div class="row justify-center">
+    <div class="col-6 p-4 shadow-sm">
+
+      <form action="/rnecessity" method="POST">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Precio</label>
+          <input type="number" class="form-control" id="price" name="price">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Descripción</label><br>
+          <textarea name="descr" id="descr" cols="85" rows="6"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center my-4">
+    <h2>Modificar una necesidad</h2>
+  </div>
+
+    <!-- MODIFICAR NECESIDAD -->
+
+  <div class="row justify-center">
+    <div class="col-6 p-4 shadow-sm">
+
+      <form action="/mnecessity" method="POST">
+        <div class="form-group">
+          <label for="name">Ingrese el nombre de la necesidad a modificar</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Precio</label>
+          <input type="number" class="form-control" id="price" name="price">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Descripción</label><br>
+          <textarea name="descr" id="descr" cols="85" rows="6"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Modificar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center my-4">
+    <h2>Buscar una necesidad</h2>
+  </div>
+
+  <!-- BUSCAR NECESIDAD -->
+
+  <div class="row justify-center">
+    <div class="col-6 p-4 shadow-sm">
+
+      <form action="/snecessity" method="POST">
+        <div class="form-group">
+          <label for="name">Ingrese el nombre de la necesidad a buscar</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center my-4">
+    <h2>Eliminar una necesidad</h2>
+  </div>
+
+  <!-- EILMINAR NECESIDAD -->
+
+  <div class="row justify-center">
+    <div class="col-6 p-4 shadow-sm">
+
+      <form action="/dnecessity" method="POST">
+        <div class="form-group">
+          <label for="name">Ingrese el nombre de la necesidad a eliminar</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<%- include("template/footer" ) %>
+</body>
+</html>

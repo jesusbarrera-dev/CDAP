@@ -8,4 +8,4 @@ const NecessitySchema = new Schema({
   price: { type: Number },
 });
 
-module.exports = mongoose.model('Elder', ElderSchema);
+module.exports = mongoose.model('Necessity', NecessitySchema);

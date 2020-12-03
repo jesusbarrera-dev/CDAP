@@ -1,4 +1,27 @@
 <%- include("template/header" , {tituloWeb: 'Necesidades | Casa de Ancianos Poncitlan' }) %>  
+
+<div class="container py-4">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for(var i = 0; i < size; i++){%>
+      <tr>
+        <td><%=necessities[i].name%></td>
+        <td><%=necessities[i].price%></td>
+        <td><%=necessities[i].description%></td>
+      </tr>
+      <%};%>
+    </tbody>
+  </table>
+</div>
+
+
 <%- include("template/footer" ) %>
 </body>
 </html>

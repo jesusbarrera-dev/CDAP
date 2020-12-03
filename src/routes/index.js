@@ -3,19 +3,13 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 // const passport = require("passport");
 const User = require("../models/user");
+const Necessity = require("../models/necessity");
 
 // create application/json parser
 var jsonParser = bodyParser.json()
  
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
-// const login = require('../controllers/login');
-
-//User
-// passport.use(user.createStrategy());
-// passport.serializeUser(user.serializeUser());
-// passport.deserializeUser(user.deserializeUser());
 
 module.exports = app => {
 
@@ -29,18 +23,16 @@ module.exports = app => {
 
   router.post('/login', urlencodedParser, (req, res) => {
     const correo =  req.body.correo;
-    const password = req.body.password;
+    const password = req.body.contra;
 
     User.findOne({email: correo}, (err, foundUser) =>{
       if(err){
         console.log(err);
       } else{
         if(foundUser){
-          console.log("Encontro usuario");
-          res.render("home");
           if(foundUser.password === password){
             console.log("redirigiendo");
-            res.render("home");
+            res.redirect("/admin");
           }
         }
       }
@@ -56,12 +48,97 @@ module.exports = app => {
     res.render("contact");
   });
   
-  router.get('/necesidades', (req, res) => {
-    res.render("needs");
+  router.get('/necesidades', async (req, res) => {
+
+    const necessities = await Necessity.find({});
+
+    var size = necessities.length;
+
+    if(necessities){
+      res.render("needs",{
+        necessities: necessities,
+        size:size
+      });
+    }
+
   });
   
   router.get('/donativo', (req, res) => {
     res.render("donation");
+  });
+
+  router.get('/admin', (req, res) =>{
+    res.render("admin");
+  });
+
+  router.post('/rnecessity', urlencodedParser , async (req, res)=>{
+    
+    const name = req.body.name;
+    const price = req.body.price;
+    const descr = req.body.descr;
+
+    const necessity = new Necessity({
+      name: name, 
+      description: descr,
+      price: price
+    });
+
+    await necessity.save(function(err){
+      if(!err){
+        console.log("necesidad registrada");
+        res.redirect("/admin");
+      }else if(err){
+        console.log(err);
+      }
+    });
+
+  });
+
+  router.post('/mnecessity', urlencodedParser , async (req, res)=>{
+    
+    const name = req.body.name;
+    const price = req.body.price;
+    const descr = req.body.descr;
+
+    try {
+      await Necessity.updateOne({name: name}, {
+        price: price,
+        description: descr
+      });
+
+      res.redirect('/admin');
+      
+    } catch (error) {
+      console.log(error);
+    }
+
+  });
+
+  router.post('/dnecessity', urlencodedParser , async (req, res)=>{
+
+    const name = req.body.name;
+
+    try {
+      await Necessity.findOneAndDelete({name:name}, {useFindAndModify: false});
+      res.redirect('/admin');
+    } catch (error) {
+      console.log(error);
+    }
+
+  });
+
+
+
+  router.post('', (req, res)=>{
+
+  });
+
+  router.post('', (req, res)=>{
+
+  });
+
+  router.post('', (req, res)=>{
+
   });
 
   router.use((req, res, next) => {
