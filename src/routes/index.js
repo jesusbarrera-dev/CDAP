@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-// const passport = require("passport");
+const nodemailer = require("nodemailer");
 const User = require("../models/user");
 const Necessity = require("../models/necessity");
 
@@ -46,6 +48,39 @@ module.exports = app => {
 
   router.get('/contacto', (req, res) => {
     res.render("contact");
+  });
+
+  router.post('/contacto', urlencodedParser, (req, res)=>{
+
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message;
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+          user: process.env.serverEmail,
+          pass: process.env.serverPassword
+      }
+  });
+
+  var mailOptions = {
+    from: process.env.serverEmail,
+    to: process.env.serverEmail,
+    subject: "Nuevo Correo",
+    text: "¡Alguien se puso en contacto! Su nombre es" + name + " con correo " + email + " y dejo el mensaje: " + message
+};
+
+transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+        res.redirect("/contacto");
+    }
+});
+
+
   });
   
   router.get('/necesidades', async (req, res) => {
@@ -124,12 +159,6 @@ module.exports = app => {
     } catch (error) {
       console.log(error);
     }
-
-  });
-
-
-
-  router.post('', (req, res)=>{
 
   });
 
