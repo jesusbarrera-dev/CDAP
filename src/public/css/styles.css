@@ -87,6 +87,7 @@ html{
 .elegant-border{
   border-style:double;
   background:lightblue;
+  padding: 20px 400px 10px 400px;
 }
 .times-new-roman{
   font-family:"Times New Roman", Times, serif;
