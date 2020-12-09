@@ -1,0 +1,21 @@
+<%- include("template/header" , {tituloWeb: 'Contacto | Casa del Anciano Poncitlán'} ) %>
+
+<div class="container py-4 shadow p-3 mb-5 bg-white rounded mt-4">
+  <%for(var i = 0; i < size; i++){%>
+    <h3><%=posts[i].title%></h3>
+  
+    <p>
+      <%=posts[i].content.substring(0, 100) + " ..."%>
+      <a href="/blog/<%=posts[i]._id%>">Leer más</a>
+    </p>
+  
+  
+  <%};%>
+</div>
+
+
+
+<%- include("template/footer" ) %>
+</body>
+
+</html>

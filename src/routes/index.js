@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require("nodemailer");
 const User = require("../models/user");
 const Necessity = require("../models/necessity");
+const Post = require('../models/post');
 
 // create application/json parser
 var jsonParser = bodyParser.json()
@@ -162,11 +163,43 @@ transporter.sendMail(mailOptions, function (error, info) {
 
   });
 
-  router.post('', (req, res)=>{
+  router.get('/wpost', (req, res)=>{
+    res.render('wpost');
+  });
+
+  router.post('/wpost',urlencodedParser, async (req, res)=>{
+    
+    const post = new Post({
+      title: req.body.title,
+      content: req.body.content
+    });
+
+    try {
+      await post.save(function(err){
+        if(!err){
+          res.redirect('/wpost');
+        }else if(err){
+          console.log(err);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
   });
 
-  router.post('', (req, res)=>{
+  router.get('/blog', async (req, res) =>{
+
+    const posts = await Post.find({});
+
+    const size = posts.length;
+
+    if(posts){
+      res.render('blog', {
+        posts: posts,
+        size: size
+      });
+    }
 
   });
 
