@@ -127,7 +127,6 @@ nav li a:hover{
 /* HOMEPAGE*/
 
 .features{
-  background:white;
   color:black;
   padding:20px;
   display:flex;
@@ -138,13 +137,12 @@ nav li a:hover{
 .features figure{
   margin:auto;
   text-align: center;
-  text-transform: uppercase;
-  width:200px;
 }
 .features figure img{
   border: 1px solid white;
-  border-radius: 50%;
-  width:200px;
+  border-radius: 100%;
+  /* width: 7rem;
+  height: 7rem; */
   box-shadow:gray 0 0 10px;
 }
 .text-boxes{
@@ -157,6 +155,7 @@ nav li a:hover{
 
 button {
   background-color: orangered; /* Green */
+  color: white;
   border: 1px white;
   padding: 20px;
   text-align: center;
@@ -168,17 +167,21 @@ button {
   border-radius: 10px;
 }
 button:hover{
-  background-color: darksalmon;
+  background-color: rgb(253, 85, 24);
   border: 1px red;
-  color: gray;
+  color: white;
 }
+
 button a{
   color: white;
 }
-button:hover a{
-  text-decoration:none; 
-  color:gray;
+
+button a:hover{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
+
 /*ABOUT US*/
 .elder-image{
   width : 150px;
