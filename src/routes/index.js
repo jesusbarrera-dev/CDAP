@@ -203,6 +203,19 @@ transporter.sendMail(mailOptions, function (error, info) {
 
   });
 
+  router.get('/blog/:postid', async (req, res) =>{
+    const postid = req.params.postid;
+    console.log(postid);
+
+    await Post.findOne({_id: postid}, function(err, post){
+      res.render('post', {
+        title: post.title,
+        content: post.content
+      });
+    });
+
+  });
+
   router.use((req, res, next) => {
     res.status(404).render("error404")
   });
