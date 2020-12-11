@@ -8,6 +8,8 @@ const User = require("../models/user");
 const Necessity = require("../models/necessity");
 const Post = require('../models/post');
 
+var logged = false;
+
 // create application/json parser
 var jsonParser = bodyParser.json()
  
@@ -34,13 +36,18 @@ module.exports = app => {
       } else{
         if(foundUser){
           if(foundUser.password === password){
-            console.log("redirigiendo");
+            logged = true;
             res.redirect("/admin");
           }
         }
       }
     });
 
+  });
+
+  router.post('/logout', (req, res) =>{
+    logged = false;
+    res.redirect('/');
   });
 
   router.get('/SobreNosotros', (req, res) => {
@@ -104,7 +111,11 @@ transporter.sendMail(mailOptions, function (error, info) {
   });
 
   router.get('/admin', (req, res) =>{
-    res.render("admin");
+    if(logged){
+      res.render("admin");
+    } else{
+      res.redirect("/login");
+    }
   });
 
   router.post('/rnecessity', urlencodedParser , async (req, res)=>{
@@ -193,7 +204,11 @@ transporter.sendMail(mailOptions, function (error, info) {
   });
 
   router.get('/wpost', (req, res)=>{
-    res.render('wpost');
+    if(logged){
+      res.render('wpost');
+    }else{
+      res.redirect("/login");
+    }
   });
 
   router.post('/wpost',urlencodedParser, async (req, res)=>{
