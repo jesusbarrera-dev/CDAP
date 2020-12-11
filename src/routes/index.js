@@ -150,6 +150,35 @@ transporter.sendMail(mailOptions, function (error, info) {
 
   });
 
+  router.post('/snecessity', urlencodedParser, async (req, res) =>{
+
+    const name = req.body.name;
+    console.log(name);
+
+    try {
+      await Necessity.findOne({name: name}, (err, foundNeed) => {
+        if(err){
+          console.log(err);
+        } else{
+          if(foundNeed){
+            res.render("snecessity", {
+              foundNeed: foundNeed
+            });
+
+            console.log("ENCONTRADOOOOOOOO: " + foundNeed);
+          }
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+  });
+
+  router.get('/snecessity', (req, res) =>{
+    res.render('snecessity');
+  })
+
   router.post('/dnecessity', urlencodedParser , async (req, res)=>{
 
     const name = req.body.name;
