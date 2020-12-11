@@ -217,6 +217,18 @@ transporter.sendMail(mailOptions, function (error, info) {
 
   });
 
+  router.post('/dpost', urlencodedParser, async (req, res) =>{
+    const name = req.body.name;
+
+    try {
+      await Post.findOneAndDelete({name: name}, {useFindAndModify: false});
+      res.redirect('/wpost');
+    } catch (error) {
+      console.log(error);
+    }
+
+  });
+
   router.get('/blog', async (req, res) =>{
 
     const posts = await Post.find({});
